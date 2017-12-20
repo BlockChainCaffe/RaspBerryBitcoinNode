@@ -24,13 +24,14 @@ Un'altra alternatica consiste nel connettersi in SSH al raspberry da un'altra ma
 Per fare questo è necessario conoscere l'indirizzo IP del raspberry sulla vostra rete.
 Per farlo potete lanciare da shell uno dei seguenti comandi:
 
-```ifconfig```
+```
+ifconfig
+```
 
 oppure 
 
 ```
 ip a
-
 ```
 
 In alternativa potete cercare anche nella schermata di configurazione del vostro router di casa.
