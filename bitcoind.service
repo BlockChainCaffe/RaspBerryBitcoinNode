@@ -1,0 +1,29 @@
+#	SERVIZIO BITCOIN CORE
+#
+#	Installazione: 
+#		cp bitcoind.service /lib/systemd/system/
+#		chmod 664 /lib/systemd/system/bitcoind.service
+#	Uso:
+#		service bitcoind start
+#		service bitcoind stop
+
+
+[Unit]
+Description=Bitcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+
+Type=forking
+PIDFile=/var/lib/bitcoind/bitcoind.pid
+ExecStart=/usr/local/bin/bitcoind -datadir=/opt/bitcoinData -daemon
+ExecStop=/usr/local/bin/bitcoin-cli stop
+
+KillMode=process
+Restart=on-failure
+TimeoutSec=120
+
+[Install]
+WantedBy=multi-user.target
