@@ -47,7 +47,7 @@
 ### Ampliamento swap
 	
 	nano /etc/dphys-swapfile
-	# portare CONF_SWAPSIZE=100  --> CONF_SWAPSIZE=1000
+	# portare CONF_SWAPSIZE=100  --> CONF_SWAPSIZE=2048
 	dphys-swapfile setup
 	dphys-swapfile swapon
 
