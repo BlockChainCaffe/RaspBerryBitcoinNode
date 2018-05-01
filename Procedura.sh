@@ -24,7 +24,6 @@
   		git \
   		qt4-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
 
-
 ### Installazione disco
 
 	# Col disco USB NON connesso:
@@ -70,7 +69,7 @@
 	git clone https://github.com/bitcoin/bitcoin.git
 	cd bitcoin/
 	./autogen.sh
-	./configure CPPFLAGS="-I/usr/local/BerkeleyDB.4.8/include -O2" LDFLAGS="-L/usr/local/BerkeleyDB.4.8/lib" --disable-wallet  --with-gui
+	./configure --with-gui=no CC=gcc CXX=g++ CPP=cpp LDFLAGS="-L/usr/local/BerkeleyDB.4.8/lib -L/usr/lib/openssl/" CPPFLAGS="-I/usr/local/BerkeleyDB.4.8/include -O2 -I/usr/include/openssl/" --disable-wallet CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768"
 	make
 	make install
 	make clean
